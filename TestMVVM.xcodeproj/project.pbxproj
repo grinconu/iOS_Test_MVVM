@@ -13,6 +13,9 @@
 		5D284CA0267FC3E900CB486E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D284C9E267FC3E900CB486E /* Main.storyboard */; };
 		5D284CA2267FC3E900CB486E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D284CA1267FC3E900CB486E /* Assets.xcassets */; };
 		5D284CA5267FC3E900CB486E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D284CA3267FC3E900CB486E /* LaunchScreen.storyboard */; };
+		5D284CB2267FC5CF00CB486E /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D284CB1267FC5CF00CB486E /* List.swift */; };
+		5D284CB4267FC82800CB486E /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D284CB3267FC82800CB486E /* ListViewModel.swift */; };
+		5D284CB6267FD10400CB486E /* ServiceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D284CB5267FD10400CB486E /* ServiceList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		5D284CA1267FC3E900CB486E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D284CA4267FC3E900CB486E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D284CA6267FC3E900CB486E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D284CB1267FC5CF00CB486E /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
+		5D284CB3267FC82800CB486E /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		5D284CB5267FD10400CB486E /* ServiceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,58 @@
 		5D284C97267FC3E900CB486E /* TestMVVM */ = {
 			isa = PBXGroup;
 			children = (
+				5D284CAF267FC4CE00CB486E /* Services */,
+				5D284CB0267FC4DB00CB486E /* Main */,
 				5D284C98267FC3E900CB486E /* AppDelegate.swift */,
 				5D284C9A267FC3E900CB486E /* SceneDelegate.swift */,
-				5D284C9C267FC3E900CB486E /* ViewController.swift */,
 				5D284C9E267FC3E900CB486E /* Main.storyboard */,
 				5D284CA1267FC3E900CB486E /* Assets.xcassets */,
 				5D284CA3267FC3E900CB486E /* LaunchScreen.storyboard */,
 				5D284CA6267FC3E900CB486E /* Info.plist */,
 			);
 			path = TestMVVM;
+			sourceTree = "<group>";
+		};
+		5D284CAC267FC45F00CB486E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5D284CB1267FC5CF00CB486E /* List.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5D284CAD267FC46800CB486E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5D284C9C267FC3E900CB486E /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5D284CAE267FC47100CB486E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5D284CB3267FC82800CB486E /* ListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5D284CAF267FC4CE00CB486E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5D284CB5267FD10400CB486E /* ServiceList.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		5D284CB0267FC4DB00CB486E /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				5D284CAC267FC45F00CB486E /* Model */,
+				5D284CAE267FC47100CB486E /* ViewModel */,
+				5D284CAD267FC46800CB486E /* View */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +186,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D284CB4267FC82800CB486E /* ListViewModel.swift in Sources */,
 				5D284C9D267FC3E900CB486E /* ViewController.swift in Sources */,
+				5D284CB2267FC5CF00CB486E /* List.swift in Sources */,
+				5D284CB6267FD10400CB486E /* ServiceList.swift in Sources */,
 				5D284C99267FC3E900CB486E /* AppDelegate.swift in Sources */,
 				5D284C9B267FC3E900CB486E /* SceneDelegate.swift in Sources */,
 			);
