@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         SetupView()
-        bindingView()
+        bindView()
     }
     
     private func SetupView(){
@@ -30,8 +30,8 @@ class ViewController: UIViewController {
         viewModel.LoadData()
     }
     
-    private func bindingView() {
-        viewModel.refreshData =  {[weak self] () in
+    private func bindView() {
+        viewModel.listViewCell.bind { [weak self] _ in
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
                 self?.activity.stopAnimating()
@@ -43,16 +43,16 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.dataArray.count
+        return viewModel.listViewCell.value?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "viewCell")!
         
-        let data = viewModel.dataArray[indexPath.row]
+        let data = viewModel.listViewCell.value?[indexPath.row]
         
-        cell.textLabel?.text = data.title
-        cell.detailTextLabel?.text = data.body
+        cell.textLabel?.text = data?.data.title
+        cell.detailTextLabel?.text = data?.data.body
         
         return cell
     }

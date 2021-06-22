@@ -9,14 +9,7 @@ import Foundation
 
 class ListViewModel {
     
-    //Connect with the viewController
-    var refreshData = { () -> () in }
-    
-    var dataArray: [List] = [] {
-        didSet {
-            refreshData()
-        }
-    }
+    var listViewCell: Observable<[ListTableViewCellViewModel]> = Observable([])
     
     var service: ServiceList
     
@@ -25,8 +18,10 @@ class ListViewModel {
     }
     
     func LoadData(){
-        service.getList { result in
-            self.dataArray = result
-        }
+        service.getList(completion: { result in
+            self.listViewCell.value = result.compactMap({
+                ListTableViewCellViewModel(data: $0)
+            })
+        })
     }
 }
